@@ -4,36 +4,103 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>QK Agentic — Quoc Khanh Agentic Technologies</title>
-  <meta name="description" content="Quoc Khanh Agentic Technologies (QK Agentic) builds agentic AI systems. Registered in Vietnam, June 2026.">
+  <meta name="description" content="QK Agentic builds Vista, a personal operations agent that handles email, calendar, documents and research for a one-person business, running on hardware its owner controls. Registered in Vietnam, June 2026.">
   <style>
-    :root { color-scheme: light; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: #1a1a1a;
-      background: #f7f5f1;
-      line-height: 1.5;
+    :root {
+      color-scheme: light dark;
+      --ink: #1a1a1a; --muted: #555; --line: #d9d4ca; --bg: #f7f5f1; --card: #fffdf9; --accent: #1f5f8b;
     }
-    main { max-width: 40rem; margin: 0 auto; padding: 4.5rem 1.5rem 3rem; }
-    p.mark { letter-spacing: 0.14em; text-transform: uppercase; font-family: system-ui, sans-serif; font-size: 0.75rem; margin: 0 0 1rem; }
-    h1 { font-size: 2.4rem; font-weight: 500; line-height: 1.15; margin: 0 0 0.75rem; }
-    h2 { font-family: system-ui, sans-serif; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 2.5rem 0 0.6rem; }
-    p { margin: 0 0 0.8rem; }
-    a { color: inherit; }
-    footer { margin-top: 3rem; font-family: system-ui, sans-serif; font-size: 0.85rem; color: #444; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #ece9e3; --muted: #a8a39a; --line: #3a3833; --bg: #161513; --card: #1f1e1b; --accent: #7fb6dd; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--bg); line-height: 1.55; }
+    main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+    .mark, h2, nav, footer, figcaption, .card b { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .mark { letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.75rem; margin: 0 0 1rem; }
+    nav { font-size: 0.85rem; margin: 0 0 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; }
+    h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); font-weight: 500; line-height: 1.15; margin: 0 0 1rem; }
+    .lede { font-size: 1.15rem; color: var(--muted); margin: 0 0 1rem; }
+    h2 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 3rem 0 0.8rem; }
+    p { margin: 0 0 0.9rem; }
+    ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+    li { margin: 0 0 0.45rem; }
+    a { color: var(--accent); }
+    figure { margin: 1.5rem 0; padding: 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+    figure svg { width: 100%; height: auto; display: block; color: var(--muted); }
+    figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1rem; }
+    .card b { display: block; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 0.82rem; color: var(--muted); }
+    svg text { font-family: system-ui, sans-serif; font-size: 13px; fill: var(--ink); }
+    svg .box { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
+    svg .hot { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
+    svg .arrow { stroke: var(--muted); stroke-width: 1.5; fill: none; marker-end: url(#a); }
+    svg .small { font-size: 11px; fill: var(--muted); }
   </style>
 </head>
 <body>
   <main>
     <p class="mark">QK Agentic</p>
-    <h1>Agentic systems for work that used to need a team.</h1>
-    <p>Quoc Khanh Agentic Technologies is a registered business in Đồng Hới, Quảng Trị, Vietnam. The Vietnamese name is Hộ kinh doanh Hệ thống trí tuệ nhân tạo Quốc Khánh. It was first registered on 3 June 2026.</p>
-    <h2>What we build</h2>
-    <p>Software that uses AI agents to carry out computer-programming and technical work: planning a task, using tools, and checking the result. The owner and operator is Nguyễn Quốc Khánh.</p>
-    <h2>Contact</h2>
+    <nav><a href="#product">Product</a><a href="#how">How it works</a><a href="#status">Status</a><a href="#founder">Founder</a><a href="#privacy">Privacy</a><a href="#contact">Contact</a></nav>
+
+    <h1>An operations agent for one-person businesses.</h1>
+    <p class="lede">Vista handles the inbox, the calendar, the paperwork and the research that a solo founder would otherwise hire someone for. It runs on hardware its owner controls, and it asks before anything leaves the house.</p>
+
+    <h2 id="product">Product: Vista</h2>
+    <p>Vista is a personal operations agent. You talk to it in its phone app, and it works through your own accounts and files.</p>
+    <div class="grid">
+      <div class="card"><b>Inbox and calendar</b>Reads Gmail and Calendar, writes a daily brief, flags what needs a decision and keeps track of follow-ups.</div>
+      <div class="card"><b>Documents</b>Files, reads and summarises PDFs and Drive documents into a plain-Markdown knowledge base that you own.</div>
+      <div class="card"><b>Research</b>Searches the web, reads primary sources and answers with links. Good for prices, procedures and technical questions.</div>
+      <div class="card"><b>Scheduled work</b>Runs recurring tasks and background jobs, and reports back only when something has changed.</div>
+    </div>
+
+    <h2 id="how">How it works</h2>
+    <figure>
+      <svg viewBox="0 0 640 250" role="img" aria-label="The phone app talks to the Vista gateway on the owner's server over a private network. The gateway calls the language model, Google Workspace with read-only access, and the web. A test harness checks every change before release.">
+        <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <rect class="box" x="10" y="95" width="120" height="60" rx="8"/><text x="70" y="121" text-anchor="middle">Phone app</text><text class="small" x="70" y="139" text-anchor="middle">owner only</text>
+        <path class="arrow" d="M132 125 H 228"/><text class="small" x="180" y="115" text-anchor="middle">private network</text>
+        <rect class="hot" x="230" y="80" width="170" height="90" rx="8"/><text x="315" y="110" text-anchor="middle">Vista gateway</text><text class="small" x="315" y="130" text-anchor="middle">owner's own server</text><text class="small" x="315" y="148" text-anchor="middle">approvals for risky actions</text>
+        <path class="arrow" d="M402 105 L 478 45"/><path class="arrow" d="M402 125 H 478"/><path class="arrow" d="M402 145 L 478 205"/>
+        <rect class="box" x="480" y="20" width="150" height="50" rx="8"/><text x="555" y="50" text-anchor="middle">Language model</text>
+        <rect class="box" x="480" y="100" width="150" height="50" rx="8"/><text x="555" y="122" text-anchor="middle">Google Workspace</text><text class="small" x="555" y="139" text-anchor="middle">read-only scopes</text>
+        <rect class="box" x="480" y="180" width="150" height="50" rx="8"/><text x="555" y="210" text-anchor="middle">Web search &amp; fetch</text>
+        <rect class="box" x="230" y="200" width="170" height="40" rx="8"/><text x="315" y="225" text-anchor="middle">Test harness &amp; evals</text>
+        <path class="arrow" d="M315 198 V 172"/>
+      </svg>
+      <figcaption>How Vista is put together. The gateway runs on the owner's server, and only the owner's devices can reach it, over a private network.</figcaption>
+    </figure>
+    <ul>
+      <li><b>The owner is in control.</b> The agent and its knowledge base live on the owner's machine. Vista reaches Google with read-only permissions, so it cannot send email or edit files there.</li>
+      <li><b>It asks first.</b> Anything that messages another person, spends money or changes an account waits for the owner's approval in the app.</li>
+      <li><b>Every change is tested before release.</b> Each change runs through automated checks and end-to-end self-tests on a separate development copy before it reaches the live agent. Blind-graded benchmarks measure answer quality.</li>
+    </ul>
+
+    <h2 id="status">Status</h2>
+    <p>The founder uses Vista every day, and it is under active development. It is not yet offered to other customers. Next on the list:</p>
+    <ul>
+      <li>better research answers;</li>
+      <li>more reliable background jobs;</li>
+      <li>a setup that a second user can install.</li>
+    </ul>
+
+    <h2 id="founder">Founder</h2>
+    <p>Nguyễn Quốc Khánh, a software engineer, builds and runs QK Agentic. His code is at <a href="https://github.com/quockhanh0212">github.com/quockhanh0212</a>.</p>
+
+    <h2 id="privacy">Privacy</h2>
+    <p>This website collects no personal data and uses no cookies or analytics. Vista processes only its owner's own data and stores it on the owner's hardware. It never sells or shares that data. For privacy questions, write to <a href="mailto:khanh@qkagentic.com">khanh@qkagentic.com</a>.</p>
+
+    <h2 id="contact">Contact</h2>
     <p><a href="mailto:khanh@qkagentic.com">khanh@qkagentic.com</a></p>
-    <footer>Quoc Khanh Agentic Technologies · QK Agentic · Vietnam</footer>
+
+    <footer>
+      Quoc Khanh Agentic Technologies (QK Agentic) · Hộ kinh doanh Hệ thống trí tuệ nhân tạo Quốc Khánh<br>
+      Registered household business in Đồng Hới, Quảng Trị, Vietnam · first registered on 3 June 2026
+    </footer>
   </main>
 </body>
 </html>
