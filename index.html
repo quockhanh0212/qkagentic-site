@@ -3,104 +3,170 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>QK Agentic — Quoc Khanh Agentic Technologies</title>
-  <meta name="description" content="QK Agentic builds Vista, a personal operations agent that handles email, calendar, documents and research for a one-person business, running on hardware its owner controls. Registered in Vietnam, June 2026.">
+  <title>QK Agentic — Your own AI team</title>
+  <meta name="description" content="QK Agentic builds personal AI agents that research, reason and get things done, so one person can move at the speed of AI. Our first agent, Vista, is live today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Inter+Tight:wght@400;500;600&display=swap">
   <style>
     :root {
-      color-scheme: light dark;
-      --ink: #1a1a1a; --muted: #555; --line: #d9d4ca; --bg: #f7f5f1; --card: #fffdf9; --accent: #1f5f8b;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --ink: #ece9e3; --muted: #a8a39a; --line: #3a3833; --bg: #161513; --card: #1f1e1b; --accent: #7fb6dd; }
+      color-scheme: light;
+      --white: #FFFFFF; --ink: #0D1B2E; --ink2: #4A5B72; --blue: #1D4ED8; --navy: #0A1F44; --rule: #D3DCE8;
+      --serif: 'Newsreader', Georgia, serif; --sans: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--bg); line-height: 1.55; }
-    main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
-    .mark, h2, nav, footer, figcaption, .card b { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-    .mark { letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.75rem; margin: 0 0 1rem; }
-    nav { font-size: 0.85rem; margin: 0 0 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-    nav a { color: var(--muted); text-decoration: none; }
-    h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); font-weight: 500; line-height: 1.15; margin: 0 0 1rem; }
-    .lede { font-size: 1.15rem; color: var(--muted); margin: 0 0 1rem; }
-    h2 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 3rem 0 0.8rem; }
+    body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--white); line-height: 1.55; font-size: 18px; }
+    a { color: var(--blue); }
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1rem; }
+    header.top { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; gap: 1rem; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.85rem; color: var(--ink); text-decoration: none; }
+    nav { display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: 0.9rem; }
+    nav a { color: var(--ink2); text-decoration: none; }
+    .eyebrow { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin: 0 0 1rem; }
+    h1, h2, .statement { font-family: var(--serif); font-weight: 500; letter-spacing: -0.02em; margin: 0; }
+    h1 { font-size: clamp(2.6rem, 7vw, 5rem); line-height: 1.02; }
+    h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.08; margin-bottom: 1.2rem; }
+    .statement { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.1; }
+    h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.35rem; }
+    .accent { color: var(--blue); }
+    .lede { font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--ink2); max-width: 46rem; margin: 1.5rem 0 0; }
     p { margin: 0 0 0.9rem; }
-    ul { margin: 0 0 1rem; padding-left: 1.2rem; }
-    li { margin: 0 0 0.45rem; }
-    a { color: var(--accent); }
-    figure { margin: 1.5rem 0; padding: 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
-    figure svg { width: 100%; height: auto; display: block; color: var(--muted); }
-    figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.8rem; margin: 1rem 0; }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1rem; }
-    .card b { display: block; font-size: 0.9rem; margin-bottom: 0.3rem; }
-    footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 0.82rem; color: var(--muted); }
-    svg text { font-family: system-ui, sans-serif; font-size: 13px; fill: var(--ink); }
-    svg .box { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
-    svg .hot { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
-    svg .arrow { stroke: var(--muted); stroke-width: 1.5; fill: none; marker-end: url(#a); }
-    svg .small { font-size: 11px; fill: var(--muted); }
+    .muted { color: var(--ink2); }
+    section { padding: 4.5rem 0; border-top: 1px solid var(--rule); }
+    .hero { padding: 5rem 0 5.5rem; border-top: none; }
+    .cta { display: inline-block; margin-top: 2rem; background: var(--blue); color: #fff; text-decoration: none; padding: 0.8rem 1.3rem; border-radius: 999px; font-weight: 500; }
+    .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2.2rem; margin-top: 2rem; }
+    .col { border-top: 2px solid var(--ink); padding-top: 1rem; }
+    .col .k { font-family: var(--serif); font-size: 1.4rem; color: var(--blue); margin-bottom: 0.4rem; }
+    .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.6rem 2.5rem; margin-top: 2rem; }
+    .feat { display: flex; gap: 0.9rem; }
+    .dot { flex: none; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--blue); margin-top: 0.45rem; }
+    figure { margin: 2rem 0 0; padding: 1.2rem; border: 1px solid var(--rule); border-radius: 14px; }
+    figure svg { width: 100%; height: auto; display: block; }
+    figcaption { font-size: 0.85rem; color: var(--ink2); margin-top: 0.8rem; }
+    svg text { font-family: var(--sans); font-size: 13px; fill: var(--ink); }
+    svg .box { fill: #fff; stroke: var(--rule); stroke-width: 1.5; }
+    svg .hot { fill: var(--navy); }
+    svg .hot-t { fill: #F3F6FB; }
+    svg .hot-s { fill: #A9B8CF; font-size: 11px; }
+    svg .next { fill: #fff; stroke: var(--rule); stroke-width: 1.5; stroke-dasharray: 5 4; }
+    svg .arrow { stroke: #8A9BB3; stroke-width: 1.5; fill: none; marker-end: url(#a); }
+    svg .small { font-size: 11px; fill: var(--ink2); }
+    .road { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 2rem; margin-top: 2rem; }
+    footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; font-size: 0.85rem; color: var(--ink2); }
   </style>
 </head>
 <body>
-  <main>
-    <p class="mark">QK Agentic</p>
-    <nav><a href="#product">Product</a><a href="#how">How it works</a><a href="#status">Status</a><a href="#founder">Founder</a><a href="#privacy">Privacy</a><a href="#contact">Contact</a></nav>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="#">
+        <svg width="28" height="28" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="none" stroke="#1D4ED8" stroke-width="4"/><circle cx="36" cy="36" r="8" fill="#1D4ED8"/><circle cx="36" cy="10" r="6" fill="#0A1F44"/><circle cx="58.5" cy="49" r="6" fill="#0A1F44"/><circle cx="13.5" cy="49" r="6" fill="#0A1F44"/></svg>
+        QK Agentic
+      </a>
+      <nav><a href="#mission">Mission</a><a href="#vista">Vista</a><a href="#how">How it works</a><a href="#roadmap">Roadmap</a><a href="#company">Company</a><a href="#contact">Contact</a></nav>
+    </header>
 
-    <h1>An operations agent for one-person businesses.</h1>
-    <p class="lede">Vista handles the inbox, the calendar, the paperwork and the research that a solo founder would otherwise hire someone for. It runs on hardware its owner controls, and it asks before anything leaves the house.</p>
-
-    <h2 id="product">Product: Vista</h2>
-    <p>Vista is a personal operations agent. You talk to it in its phone app, and it works through your own accounts and files.</p>
-    <div class="grid">
-      <div class="card"><b>Inbox and calendar</b>Reads Gmail and Calendar, writes a daily brief, flags what needs a decision and keeps track of follow-ups.</div>
-      <div class="card"><b>Documents</b>Files, reads and summarises PDFs and Drive documents into a plain-Markdown knowledge base that you own.</div>
-      <div class="card"><b>Research</b>Searches the web, reads primary sources and answers with links. Good for prices, procedures and technical questions.</div>
-      <div class="card"><b>Scheduled work</b>Runs recurring tasks and background jobs, and reports back only when something has changed.</div>
+    <div class="hero">
+      <h1>Your own <span class="accent">AI team.</span><br>Working while you live.</h1>
+      <p class="lede">QK Agentic builds personal AI agents that research, reason and get things done, so one person can move at the speed of AI.</p>
+      <a class="cta" href="mailto:khanh@qkagentic.com">Talk to the founder</a>
     </div>
 
-    <h2 id="how">How it works</h2>
-    <figure>
-      <svg viewBox="0 0 640 250" role="img" aria-label="The phone app talks to the Vista gateway on the owner's server over a private network. The gateway calls the language model, Google Workspace with read-only access, and the web. A test harness checks every change before release.">
-        <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
-        <rect class="box" x="10" y="95" width="120" height="60" rx="8"/><text x="70" y="121" text-anchor="middle">Phone app</text><text class="small" x="70" y="139" text-anchor="middle">owner only</text>
-        <path class="arrow" d="M132 125 H 228"/><text class="small" x="180" y="115" text-anchor="middle">private network</text>
-        <rect class="hot" x="230" y="80" width="170" height="90" rx="8"/><text x="315" y="110" text-anchor="middle">Vista gateway</text><text class="small" x="315" y="130" text-anchor="middle">owner's own server</text><text class="small" x="315" y="148" text-anchor="middle">approvals for risky actions</text>
-        <path class="arrow" d="M402 105 L 478 45"/><path class="arrow" d="M402 125 H 478"/><path class="arrow" d="M402 145 L 478 205"/>
-        <rect class="box" x="480" y="20" width="150" height="50" rx="8"/><text x="555" y="50" text-anchor="middle">Language model</text>
-        <rect class="box" x="480" y="100" width="150" height="50" rx="8"/><text x="555" y="122" text-anchor="middle">Google Workspace</text><text class="small" x="555" y="139" text-anchor="middle">read-only scopes</text>
-        <rect class="box" x="480" y="180" width="150" height="50" rx="8"/><text x="555" y="210" text-anchor="middle">Web search &amp; fetch</text>
-        <rect class="box" x="230" y="200" width="170" height="40" rx="8"/><text x="315" y="225" text-anchor="middle">Test harness &amp; evals</text>
-        <path class="arrow" d="M315 198 V 172"/>
-      </svg>
-      <figcaption>How Vista is put together. The gateway runs on the owner's server, and only the owner's devices can reach it, over a private network.</figcaption>
-    </figure>
-    <ul>
-      <li><b>The owner is in control.</b> The agent and its knowledge base live on the owner's machine. Vista reaches Google with read-only permissions, so it cannot send email or edit files there.</li>
-      <li><b>It asks first.</b> Anything that messages another person, spends money or changes an account waits for the owner's approval in the app.</li>
-      <li><b>Every change is tested before release.</b> Each change runs through automated checks and end-to-end self-tests on a separate development copy before it reaches the live agent. Blind-graded benchmarks measure answer quality.</li>
-    </ul>
+    <section>
+      <p class="eyebrow">The shift</p>
+      <p class="statement">AI now moves faster than <span class="accent">any human can learn.</span></p>
+      <p class="lede">Every week brings new models, new tools and new rules. Keeping up has become a full-time job, and it comes on top of the work you already have.</p>
+      <div class="grid4">
+        <div class="col"><p class="k">Research</p><p class="muted">Finding the real answer behind ten browser tabs and three contradictory sources.</p></div>
+        <div class="col"><p class="k">Learning</p><p class="muted">Turning a stream of papers, docs and courses into something you actually know.</p></div>
+        <div class="col"><p class="k">Operations</p><p class="muted">Inbox, calendar, paperwork, follow-ups: the admin that eats every afternoon.</p></div>
+        <div class="col"><p class="k">Deciding</p><p class="muted">Weighing options with too little time to dig in, so good decisions turn into fast guesses.</p></div>
+      </div>
+    </section>
 
-    <h2 id="status">Status</h2>
-    <p>The founder uses Vista every day, and it is under active development. It is not yet offered to other customers. Next on the list:</p>
-    <ul>
-      <li>better research answers;</li>
-      <li>more reliable background jobs;</li>
-      <li>a setup that a second user can install.</li>
-    </ul>
+    <section id="mission">
+      <p class="eyebrow">Our mission</p>
+      <p class="statement">Give every person an AI team that <span class="accent">never tires and scales on demand.</span></p>
+      <div class="grid3">
+        <div class="col"><h3>Goes deep</h3><p class="muted">Agents read everything, cross-check sources and hand back the answer, not the homework.</p></div>
+        <div class="col"><h3>Works around the clock</h3><p class="muted">Research, monitoring and follow-ups keep running while you sleep, travel or focus.</p></div>
+        <div class="col"><h3>Grows with you</h3><p class="muted">Need another researcher or analyst? Add an agent. The team scales in minutes, not months.</p></div>
+      </div>
+    </section>
 
-    <h2 id="founder">Founder</h2>
-    <p>Nguyễn Quốc Khánh, a software engineer, builds and runs QK Agentic. His code is at <a href="https://github.com/quockhanh0212">github.com/quockhanh0212</a>.</p>
+    <section id="vista">
+      <p class="eyebrow">Product</p>
+      <h2>Meet Vista. The first teammate is <span class="accent">already on the job.</span></h2>
+      <p class="lede">One conversation in a phone app. Vista does the rest.</p>
+      <div class="feats">
+        <div class="feat"><span class="dot"></span><div><h3>Phone app</h3><p class="muted">Talk to Vista anywhere. Approve actions in one tap.</p></div></div>
+        <div class="feat"><span class="dot"></span><div><h3>Deep research</h3><p class="muted">Web search, page reading and a real browser, with sources cited.</p></div></div>
+        <div class="feat"><span class="dot"></span><div><h3>Gmail, Calendar, Drive</h3><p class="muted">Reads your whole Workspace and writes a daily brief.</p></div></div>
+        <div class="feat"><span class="dot"></span><div><h3>Second brain</h3><p class="muted">PDFs and notes filed into Markdown and synced to Drive.</p></div></div>
+        <div class="feat"><span class="dot"></span><div><h3>Memory</h3><p class="muted">Remembers context and consolidates it every night.</p></div></div>
+        <div class="feat"><span class="dot"></span><div><h3>Background worker</h3><p class="muted">Hands long jobs to a sandboxed coding agent.</p></div></div>
+        <div class="feat"><span class="dot"></span><div><h3>Scheduled jobs</h3><p class="muted">Recurring tasks run 24/7 and report back what changed.</p></div></div>
+        <div class="feat"><span class="dot"></span><div><h3>Private by design</h3><p class="muted">Its own server, a private network and read-only Google access.</p></div></div>
+      </div>
+    </section>
 
-    <h2 id="privacy">Privacy</h2>
-    <p>This website collects no personal data and uses no cookies or analytics. Vista processes only its owner's own data and stores it on the owner's hardware. It never sells or shares that data. For privacy questions, write to <a href="mailto:khanh@qkagentic.com">khanh@qkagentic.com</a>.</p>
+    <section id="how">
+      <p class="eyebrow">How it works</p>
+      <h2>You lead. Vista runs the team.</h2>
+      <figure>
+        <svg viewBox="0 0 640 260" role="img" aria-label="You talk to Vista from the phone app over a private network. Vista plans, acts and checks, and asks before risky steps. It works with frontier models, your accounts with read-only access, and the web. Next, Vista will coordinate specialist agents.">
+          <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8A9BB3"/></marker></defs>
+          <rect class="box" x="10" y="85" width="110" height="60" rx="8"/><text x="65" y="111" text-anchor="middle">You</text><text class="small" x="65" y="129" text-anchor="middle">phone app</text>
+          <path class="arrow" d="M122 115 H 218"/><text class="small" x="170" y="105" text-anchor="middle">private network</text>
+          <rect class="hot" x="220" y="65" width="190" height="100" rx="8"/><text class="hot-t" x="315" y="100" text-anchor="middle">Vista</text><text class="hot-s" x="315" y="120" text-anchor="middle">plans, acts, checks</text><text class="hot-s" x="315" y="138" text-anchor="middle">asks before risky steps</text>
+          <path class="arrow" d="M412 90 L 478 40"/><path class="arrow" d="M412 115 H 478"/><path class="arrow" d="M412 140 L 478 190"/>
+          <rect class="box" x="480" y="15" width="150" height="48" rx="8"/><text x="555" y="44" text-anchor="middle">Frontier models</text>
+          <rect class="box" x="480" y="91" width="150" height="48" rx="8"/><text x="555" y="112" text-anchor="middle">Your accounts</text><text class="small" x="555" y="128" text-anchor="middle">read-only Google</text>
+          <rect class="box" x="480" y="167" width="150" height="48" rx="8"/><text x="555" y="196" text-anchor="middle">The web</text>
+          <rect class="next" x="215" y="200" width="200" height="48" rx="8"/><text x="315" y="222" text-anchor="middle">Next: specialist agents</text><text class="small" x="315" y="238" text-anchor="middle">researcher, analyst, tutor</text>
+          <path class="arrow" d="M315 167 V 197" stroke-dasharray="4 4"/>
+        </svg>
+        <figcaption>Vista runs on hardware its owner controls. Only the owner’s devices can reach it, over a private network.</figcaption>
+      </figure>
+      <div class="grid3">
+        <div class="col"><h3>Your data stays yours</h3><p class="muted">Vista and its memory run on hardware the owner controls. Google access is read-only by design.</p></div>
+        <div class="col"><h3>It asks first</h3><p class="muted">Messaging someone, spending money or changing an account waits for one tap of approval.</p></div>
+        <div class="col"><h3>Tested like infrastructure</h3><p class="muted">Every change passes automated checks and end-to-end self-tests before it reaches the live agent.</p></div>
+      </div>
+    </section>
 
-    <h2 id="contact">Contact</h2>
-    <p><a href="mailto:khanh@qkagentic.com">khanh@qkagentic.com</a></p>
+    <section id="roadmap">
+      <p class="eyebrow">Roadmap</p>
+      <h2>From one AI teammate to a whole team.</h2>
+      <div class="road">
+        <div class="col"><p class="k">Q1 2027</p><h3>Sharper research</h3><p class="muted">Deeper, benchmarked answers, and private models on NVIDIA GPUs.</p></div>
+        <div class="col"><p class="k">Q2 2027</p><h3>Specialist agents</h3><p class="muted">A researcher, an analyst and a tutor, coordinated by Vista.</p></div>
+        <div class="col"><p class="k">Q3 2027</p><h3>Closed beta</h3><p class="muted">One-click setup for the first solo founders in Vietnam.</p></div>
+        <div class="col"><p class="k">2028</p><h3>A team for everyone</h3><p class="muted">Personal AI teams for professionals and learners across Southeast Asia.</p></div>
+      </div>
+    </section>
+
+    <section id="company">
+      <p class="eyebrow">Company</p>
+      <h2>Built by a founder who runs on his own product.</h2>
+      <div class="grid3">
+        <div class="col"><h3>Nguyễn Quốc Khánh</h3><p class="muted">Founder and software engineer. He designed, built and runs Vista end to end. <a href="https://github.com/quockhanh0212">github.com/quockhanh0212</a></p></div>
+        <div class="col"><h3>QK Agentic</h3><p class="muted">Quoc Khanh Agentic Technologies, a registered household business (Hộ kinh doanh) in Đồng Hới, Vietnam, since June 2026. Self-funded.</p></div>
+        <div class="col" id="privacy"><h3>Privacy</h3><p class="muted">This site sets no cookies and runs no analytics. Its fonts load from Google Fonts. Vista processes only its owner’s own data, keeps it on the owner’s hardware and never sells or shares it.</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="eyebrow">Contact</p>
+      <p class="statement">Want an AI team of your own?</p>
+      <a class="cta" href="mailto:khanh@qkagentic.com">khanh@qkagentic.com</a>
+    </section>
 
     <footer>
       Quoc Khanh Agentic Technologies (QK Agentic) · Hộ kinh doanh Hệ thống trí tuệ nhân tạo Quốc Khánh<br>
       Registered household business in Đồng Hới, Quảng Trị, Vietnam · first registered on 3 June 2026
     </footer>
-  </main>
+  </div>
 </body>
 </html>
